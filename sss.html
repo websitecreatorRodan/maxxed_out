@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Age Calculator</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('ef6a4551-cab8-41a3-a46c-d23694a8231e.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #5c67f2;
+            margin-bottom: 20px;
+        }
+        label {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #5c67f2;
+        }
+        input[type="number"], button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid #5c67f2;
+            border-radius: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #ageDisplay, #birthYearDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h3>NOTE: if your r running ages is 10 u need to enter as u r age is 9</h3>
+        <h1>Age Calculator</h1>
+        <label for="years">Age:</label>
+        <input type="number" id="years" min="0" max="120" value="0">
+        <label for="months">Months:</label>
+        <input type="number" id="months" min="0" max="11" value="0">
+        
+        <label for="days">Days:</label>
+        <input type="number" id="days" min="0" max="30" value="0">
+        <button onclick="calculateAge()">Calculate Age</button>
+
+        <br><br>
+        <a href="main.html">
+            <button id="ddddd">Go Back</button>
+    
+          </a>
+        <h2 id="ageDisplay"></h2>
+        <h3 id="birthYearDisplay"></h3>
+<br>
+        
+    </div>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="Y2meta.app - 2 minute meditation music,2 minutes of relaxing music,relaxing background music 2 minutes,Meditation (320 kbps).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function calculateAge() {
+            const years = parseInt(document.getElementById('years').value, 10);
+            const months = parseInt(document.getElementById('months').value, 10);
+            const days = parseInt(document.getElementById('days').value, 10);
+    
+            const totalDays = years * 365.25 + months * 30 + + days;
+            const totalHours = totalDays * 24;
+            const totalMinutes = totalHours * 60;
+            const totalSeconds = totalMinutes * 60;
+            const currentYear = new Date().getFullYear();
+            const birthYear = currentYear - years - (months > 0  || days > 0 ? 1 : 0);
+    
+            const ageDisplay = `You are approximately ${totalDays.toFixed(0)} days, or ${totalHours.toFixed(0)} hours, or ${totalMinutes.toFixed(0)} minutes, or ${totalSeconds.toFixed(0)} seconds old.`;
+            const birthYearDisplay = `You were born in the year ${birthYear}.`;
+    
+            document.getElementById('ageDisplay').innerText = ageDisplay;
+            document.getElementById('birthYearDisplay').innerText = birthYearDisplay;
+        }
+    </script>
+</body>
+</html>

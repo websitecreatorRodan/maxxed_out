@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>Rodan 5000's Official Website</title>
+    <style>
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #CCCCCC; /* Light grey text for general readability */
+    background-color: #000;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/2bbf3a52005319.5901123c114f4.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header, nav, main, footer {
+    background-color: rgba(28, 28, 28, 0.9); /* Darker shade for better contrast */
+    border: 1px solid #444444; /* Subtle borders */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #BBBBBB; /* Lighter grey for links */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+main {
+    text-align: justify;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+#equalizer {
+    width: 100%;
+    height: auto;
+}
+
+.uncopyable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#nnnn{
+    margin-bottom: 40px;
+}
+
+
+
+#toggleButton {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    background-color: #333;
+    color: #BBBBBB; /* Light grey for button text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #444444;
+}
+    </style>
+</head>
+<body>
+    <div class="uncopyable">
+        <header>
+            <h1>Rodan 500d0's</h1>
+            <p>Official Website</p>
+        </header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+            <a href="main.html">Go back</a>
+
+        </nav>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hi, I'm Rodan_5000 in the technical world. Currently, I'm a student at Narayana Olympiad School, pursuing my passion for technology and computer science.</p>
+                <p>My goal is to become an AWS Engineer, leveraging my skills in cloud computing and infrastructure management to design and deploy scalable, reliable, and cost-effective solutions for businesses.</p>
+                <p>Throughout my academic journey, I've been actively involved in various tech-related projects and competitions, honing my skills in programming, networking, and system administration. I'm passionate about learning new technologies and staying updated with the latest trends in the industry.</p>
+                <p>Feel free to explore my portfolio and get in touch if you have any questions or opportunities for collaboration.</p>
+                      </section>
+
+                      <section id="portfolio">
+                        <h2>Portfolio</h2>
+                        <div class="achievement">
+                            <h3>Certified Coder</h3>
+                            <p>I am a certified coder from WhiteHat Jr, where I have learned coding skills and developed various projects, including web applications, games, and animations.</p>
+                        </div>
+                        <div class="achievement">
+                            <h3>Certified Game Developer</h3>
+                            <p>I am also certified as a game developer from WhiteHat Jr, where I have created interactive and engaging games using platforms like Scratch, Unity, or other game development frameworks.</p>
+                        </div>
+                        <div class="achievement">
+                            <h3>Video Editor</h3>
+                            <p>During my journey, I have gained experience as a video editor, creating and editing videos for various purposes, including gaming content, tutorials, and promotional videos.</p>
+                        </div>
+                        <div class="achievement">
+                            <h3>YouTube Channel</h3>
+                            <p>As a passionate gamer and content creator, I run a YouTube channel where I share my gaming experiences, tutorials, tips, and tricks with my audience.</p>
+                        </div>
+                    </section>
+
+                    <audio id="audio" src="Ed Sheeran - Take Me Back To London (feat. Stormzy) [Official Lyric Video]-audio.webm"></audio>
+                    <div class="canvas-container">
+                    <canvas id="equalizer" width="400" height="100"></canvas>
+                    </div>
+                    <button id="toggleButton" id="">Play/Pause</button>
+
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:nkvharshvardhan@gmail.com">nkvharshvardhan@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+919985546322">9985546322</a></p>
+                </div>
+                <div class="hire-me">
+                    <h3>Hire Me</h3>
+                    <p>Looking for a passionate coder, game developer, or video editor? Feel free to reach out to discuss your project requirements or collaborations.</p>
+                    <p id="nnnn">I'm available for freelance work and excited to take on new challenges!</p>
+                </div>
+            </section>
+        </div>
+
+        </main>
+        <footer>
+            &copy; 2024 Rodan. All rights reserved.
+        </footer>
+    </div>
+    <script>
+var audio = document.getElementById("audio");
+var toggleButton = document.getElementById("toggleButton");
+
+toggleButton.addEventListener("click", function() {
+    if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = "Pause";
+    } else {
+        audio.pause();
+        toggleButton.textContent = "Play";
+    }
+});
+
+
+
+        // Get the audio element and canvas
+var audio = document.getElementById("audio");
+var canvas = document.getElementById("equalizer");
+var ctx = canvas.getContext("2d");
+
+// Create the analyser node
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var analyser = audioCtx.createAnalyser();
+var source = audioCtx.createMediaElementSource(audio);
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+
+// Set up the analyser
+analyser.fftSize = 256;
+var bufferLength = analyser.frequencyBinCount;
+var dataArray = new Uint8Array(bufferLength);
+
+// Draw the equalizer
+function drawEqualizer() {
+    requestAnimationFrame(drawEqualizer);
+
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    var barWidth = (canvas.width / bufferLength) * 2.5;
+    var barHeight;
+    var x = 0;
+
+    for (var i = 0; i < bufferLength; i++) {
+                barHeight = dataArray[i];
+
+                var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '	rgb(192,192,192)'); // Pink
+                gradient.addColorStop(1, '		rgb(128,128,128)'); // Blue
+
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+
+                x += barWidth + 1;
+            }
+        }
+
+
+// Start drawing the equalizer
+drawEqualizer();
+
+// Play the audio
+audio.play();
+
+    </script>
+</body>
+</html>

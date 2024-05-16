@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodan's Summer Camping & Website Creation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jacquard+12&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Caveat", cursive;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: #ecf0f1;  /* Light Grey */
+            color: #2c3e50;  /* Dark Blue */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;  /* Dark Blue */
+            color: #ffffff;  /* White */
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .intro {
+            padding: 50px 20px;
+            text-align: center;
+            background: url('https://img.pikbest.com/backgrounds/20190717/gif-purple-blue-neon-color-strip-dynamic-banner-background_2758296.jpg!sw800') no-repeat center center/cover;
+            color: rgb(255, 255, 255);  /* White */
+        }
+        .intro h1 {
+            font-family: "Briem Hand", cursive;
+            font-optical-sizing: auto;
+            font-weight: 700;  /* Corrected */
+            font-style: normal;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .intro p {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #ffffff;  /* White */
+            background: url('https://windowscustomization.com/wp-content/uploads/2018/12/Neon-Tanjim.gif') no-repeat center center/cover;
+        }
+        .service {
+            background-color: #002aff71;  /* Light Blue */
+            color: #ffffff;  /* White */
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;  /* Remove underline from links */
+            border: 1px solid #ecf0f1;  /* Light Grey */
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-color: #e74c3c;  /* Red */
+        }
+        .service h2 {
+            font-family: "Briem Hand", cursive;
+            font-optical-sizing: auto;
+            font-weight: 700;  /* Corrected */
+            font-style: normal;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 1.2rem;
+        }
+        .service img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #2c3e50;  /* Dark Blue */
+            color: #ffffff;  /* White */
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            z-index: 10;
+        }
+        #equalizerContainer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2c3e50;  /* Dark Blue */
+        }
+        #equalizer {
+            width: 100%;
+            height: 150px;
+            background-color: #000000;  /* Black */
+            margin-bottom: 20px;
+        }
+        .play-pause-button {
+            background-color: #e74c3c;  /* Red */
+            color: #ffffff;  /* White */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>Rodan's Summer Camping & Website Creation</header>
+    <div class="intro">
+        <h1 id="mainTitle"></h1>
+        <p>Experience the best summer camping adventures and professional website creation services for all your special occasions.</p>
+    </div>
+    <div class="services">
+        <a href="creator.html" class="service">
+            <img src="Rodan 5000's Official Website - Opera 16-05-2024 16_53_12.png" alt="Camping">
+            <h2>Creator's Website</h2>
+            <p>A website featuring an incredible, intricately designed cyber-themed interface created by Rodan. This digital masterpiece blends futuristic elements with sleek, modern aesthetics.</p>
+        </a>
+        <a href="d.html" class="service">
+            <img src="Get TOgather - Opera 16-05-2024 17_20_49 (2).png" alt="Website Creation">
+            <h2>Incredible Invitation Creation</h2>
+            <p>Need a website for a special occasion? I specialize in creating beautiful, functional websites tailored to your needs.</p>
+        </a>
+        <a href="sss.html" class="service">
+            <img src="Age Calculator - Opera 16-05-2024 18_39_39.png" alt="Custom Designs">
+            <h2>Custom Designs</h2>
+            <p>Get custom-designed websites that reflect your unique style and requirements. Perfect for birthdays, weddings, and more.</p>
+        </a>
+    </div>
+    <div id="equalizerContainer">
+        <audio id="audio">
+            <source src="Monster.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <button class="play-pause-button" id="playPauseButton">Play</button>
+        <canvas id="equalizer"></canvas>
+    </div>
+    <footer>Contact Rodan: rodan@example.com | Phone: (123) 456-7890</footer>
+
+    <script>
+        const mainTitleText1 = "Rodan's Website Camping";
+        const mainTitleText2 = "Contact for Occasional Purposes";
+        let mainIndex = 0;
+        let currentTitle = mainTitleText1;
+
+        function typeMainTitle() {
+            if (mainIndex < currentTitle.length) {
+                document.getElementById('mainTitle').innerHTML += currentTitle.charAt(mainIndex);
+                mainIndex++;
+                setTimeout(typeMainTitle, 70); // Speed of typing
+            } else {
+                setTimeout(switchTitle, 3000); // Wait for 3 seconds before switching
+            }
+        }
+
+        function switchTitle() {
+            document.getElementById('mainTitle').innerHTML = ''; // Clear the current text
+            currentTitle = (currentTitle === mainTitleText1) ? mainTitleText2 : mainTitleText1;
+            mainIndex = 0; // Reset index
+            typeMainTitle(); // Restart typing with new title
+        }
+
+        window.onload = function() {
+            typeMainTitle(); // Start typing main title on load
+        };
+
+        var audio = document.getElementById("audio");
+        var canvas = document.getElementById("equalizer");
+        var ctx = canvas.getContext("2d");
+
+        // Create the analyser node
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        var analyser = audioCtx.createAnalyser();
+        var source = audioCtx.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
+
+        // Set up the analyser
+        analyser.fftSize = 256;
+        var bufferLength = analyser.frequencyBinCount;
+        var dataArray = new Uint8Array(bufferLength);
+
+        // Draw the equalizer with a pink and blue gradient
+        function drawEqualizer() {
+            requestAnimationFrame(drawEqualizer);
+
+            analyser.getByteFrequencyData(dataArray);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            var barWidth = (canvas.width / bufferLength) * 2.5;
+            var barHeight;
+            var x = 0;
+
+            for (var i = 0; i < bufferLength; i++) {
+                barHeight = dataArray[i];
+
+                var gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, 'rgb(255, 20, 147)'); // Pink
+                gradient.addColorStop(1, 'rgb(0, 0, 255)'); // Blue
+
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+
+                x += barWidth + 1;
+            }
+        }
+
+        // Start drawing the equalizer
+        drawEqualizer();
+
+        // Play/Pause button functionality
+        var playPauseButton = document.getElementById("playPauseButton");
+        playPauseButton.addEventListener("click", function() {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.textContent = "Pause";
+            } else {
+                audio.pause();
+                playPauseButton.textContent = "Play";
+            }
+        });
+        audio.play();
+    </script>
+</body>
+</html>
